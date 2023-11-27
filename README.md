@@ -22,7 +22,7 @@ torchaudio==2.0.2
 torchtriton==2.0.0    
 torchvision==0.15.2   
 
-## Description files
+## Files description
 
 (1) train_dhf_ver01.py and train_dhf_ver02.py.  These files re-train a CNN model with Hadamard Codes, by default we left resnet101 model configuration ready to be re-trained.
 
