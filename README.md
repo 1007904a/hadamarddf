@@ -49,7 +49,7 @@ The models used in these files are:
 
 In this step, "corr_mtrx_00_{Code}/[txt_classes.txt | txt_vectors.txt]" files are created.
 
-(3) df_exhaustive_search.py and df_exhaustive_search_faiss.py. In order to get nearest neighborns from a query $q$ with DF and DHF, we used NMSLIB and Faiss indexers to reduce computer time. 
+(3) df_exhaustive_search.py and df_exhaustive_search_faiss.py. In order to get nearest neighborns from a query $q$ with DF and DHF, we used NMSLIB and Faiss indexers to reduce computing time. 
 The code in df_exhaustive_search.py and df_exhaustive_search_faiss.py show NMSLIB and Faiss implementation with default parameters.
 
 In this step, a file with $k$ nearest neighborns for each imagen in evaluation set (every imagen as query $q$) is created.
