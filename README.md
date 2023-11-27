@@ -22,15 +22,13 @@ torchaudio==2.0.2
 torchtriton==2.0.0    
 torchvision==0.15.2   
 
-## Description
+## Description files
 
-(1) train_dhf_ver01.py and train_dhf_ver02.py
-These files re-train a CNN model with Hadamard Codes, by default we left resnet101 model configuration ready to be re-trained.
+(1) train_dhf_ver01.py and train_dhf_ver02.py.  These files re-train a CNN model with Hadamard Codes, by default we left resnet101 model configuration ready to be re-trained.
 
 The cnn model re-trained it's saved in 'checkpoint/{name_file}'.
 
-(2) extract_df.py, extract_dhf.py, extract_df_quantized.py and extract_df_w_matrix.py. 
-These files extract Deep Features (df) or Deep Hadamard Features (df) from the last layer before output's model.
+(2) extract_df.py, extract_dhf.py, extract_df_quantized.py and extract_df_w_matrix.py. These files extract Deep Features (df) or Deep Hadamard Features (df) from the last layer before output's model.
 The models used in these files are:
 
 | Index | Model Name      | Code           |
@@ -51,17 +49,13 @@ The models used in these files are:
 
 In this step, "corr_mtrx_00_{Code}/[txt_classes.txt | txt_vectors.txt]" files are created.
 
-(3) df_exhaustive_search.py and df_exhaustive_search_faiss.py
-
-In order to get nearest neighborns from a query $q$ with DF and DHF, we used NMSLIB and Faiss indexers to reduce computer time. 
+(3) df_exhaustive_search.py and df_exhaustive_search_faiss.py. In order to get nearest neighborns from a query $q$ with DF and DHF, we used NMSLIB and Faiss indexers to reduce computer time. 
 The code in df_exhaustive_search.py and df_exhaustive_search_faiss.py show NMSLIB and Faiss implementation with default parameters.
 
 In this step, a file with $k$ nearest neighborns for each imagen in evaluation set (every imagen as query $q$) is created.
 This file is saved in "index/{file_name}.txt".
 
-(4) binary_exhaustive_search.cpp and binary_exhaustive_search.h
-
-The binary_exhaustive_search.cpp and binary_exhaustive_search.h files are an implementation to get nearest neighborns with Deep Hadamard Features. 
+(4) binary_exhaustive_search.cpp and binary_exhaustive_search.h. The binary_exhaustive_search.cpp and binary_exhaustive_search.h files are an implementation to get nearest neighborns with Deep Hadamard Features. 
 In our implementation, we used bits operations with "builtin_popcountll" function in C++.
 
 To compile and run:
@@ -69,12 +63,10 @@ To compile and run:
 g++ -O3 -o binary_exhaustive_search binary_exhaustive_search.cpp && ./binary_exhaustive_search
 ```
 
-(5) get_knn_recall.py and knn_library.py
-To evaluate our work, we calculate recall @1, @5 and @10 from $k$-NN and [HSP classifier](https://link.springer.com/chapter/10.1007/11795490_19)
+(5) get_knn_recall.py and knn_library.py. To evaluate our work, we calculate recall @1, @5 and @10 from $k$-NN and [HSP classifier](https://link.springer.com/chapter/10.1007/11795490_19)
 
 
-(6) create_h5_files.py
-This file create a h5 file from data extracted from extract_df.py, extract_dhf.py, extract_df_quantized.py and extract_df_w_matrix.py files.
+(6) create_h5_files.py. This file create a h5 file from data extracted from extract_df.py, extract_dhf.py, extract_df_quantized.py and extract_df_w_matrix.py files.
 This data is saved in the 'labels' and 'data' tags from h5 file.
 
 ## Contact
